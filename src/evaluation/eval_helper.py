@@ -278,11 +278,13 @@ class TrainValidateTestModel:
         model.to(device)
         model, loss, acc = __class__.update_per_epoch(model, None, criterion, dataloader, device, mode='test',
                                                       calc_acc=calc_acc, calc_auc=calc_acc)
-
-        true_labels, pred_labels = loss
-        pred_labels = pred_labels[0][:, -1]
-        return [true_labels[0], pred_labels], acc
-
+        if calc_acc:
+            true_labels, pred_labels = loss
+            pred_labels = pred_labels[0][:, -1]
+            return [true_labels[0], pred_labels], acc
+        else:
+            return loss, acc
+            
     def train_val_test_classification(self, train_dl, test_dl, model, train=True, validate=True):
         criterion = torch.nn.CrossEntropyLoss()
         optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
