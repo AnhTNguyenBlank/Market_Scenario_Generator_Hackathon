@@ -343,7 +343,7 @@ def create_dl(dl1, dl2, batch_size, cutoff=False):
 
     if cutoff:
         _, T, C = next(iter(dl1))[0].shape
-        T_cutoff = int(T / 10)
+        T_cutoff = T# int(T / 10)
         for data in dl1:
             x.append(data[0][:, :-T_cutoff])
             y.append(data[0][:, -T_cutoff:].reshape(data[0].shape[0], -1))
