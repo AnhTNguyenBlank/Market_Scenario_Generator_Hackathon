@@ -1,6 +1,7 @@
 import tensorflow as tf
 import keras
 from keras import layers
+import tensorflow_probability as tfp
 
 from abc import ABC, abstractmethod
 
