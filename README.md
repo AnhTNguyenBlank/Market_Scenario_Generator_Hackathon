@@ -23,8 +23,6 @@ For the 2. Market Scenario Generation.ipynb, it contains the updated version of 
 
 The out-of-sample test for the new model is actual far superior than the submitted model interms of hist_loss or marginal loss between features, for other metrics, they are just comparable if not slightly worse.
 
-New model and results will be updated.
-
 # Credit and acknowledgement
 
 Most of the evaluation packages and functions are used directly from the competition Starting kit: https://github.com/DeepIntoStreams/Market_Scenario_Generator_Hackathon_starting_kit
